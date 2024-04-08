@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-    <a-scene arjs>
+    <a-scene arjs="trackingMethod: best; sourceType: webcam;">
       <template v-for="(item, index) in markersAndModels" :key="index">
         <!-- <a-marker :preset="item.marker.preset"> -->
         <a-marker preset="custom" type="pattern" :url="item.marker.patt">
           <a-entity :position="item.marker.position" :scale="item.marker.scale">
             <a-text
               :value="item.marker.preset"
-              color="yellow"
+              color="pink"
               position="0 0 -2"
-              rotation="270 0 0"
+              rotation="280 0 0"
               scale="2 2 2"
             ></a-text>
             <a-gltf-model
@@ -38,7 +38,7 @@ const markersAndModels = ref([
       patt: "/src/assets/pattterns/pattern-pokebal (2).patt",
       position: "0 0 0",
       rotation: "0 0 0",
-      scale: "1 1 1",
+      scale: ".5 .5 .5",
     },
     model: {
       src: "/src/assets/models/pokeballDUO.glb",
